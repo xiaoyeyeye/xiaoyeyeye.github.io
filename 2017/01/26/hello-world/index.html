@@ -80,7 +80,9 @@ Quick">
 </script>
 
 
-    <script> yiliaConfig.jquery_ui = [false]; </script>
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
 
 
 
@@ -178,8 +180,6 @@ Quick">
                     <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fa 新浪微博" href="/sina weibo" title="新浪微博"></a>
-                            
                                 <a class="fa GitHub" href="#" title="GitHub"></a>
                             
                                 <a class="fa 知乎" href="/zhihu" title="知乎"></a>
@@ -266,8 +266,6 @@ Quick">
             <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fa 新浪微博" target="_blank" href="/sina weibo" title="新浪微博"></a>
-                            
                                 <a class="fa GitHub" target="_blank" href="#" title="GitHub"></a>
                             
                                 <a class="fa 知乎" target="_blank" href="/zhihu" title="知乎"></a>
@@ -294,7 +292,7 @@ Quick">
   
     <div class="article-meta">
       <a href="/2017/01/26/hello-world/" class="article-date">
-      <time datetime="2017-01-26T13:37:53.860Z" itemprop="datePublished">2017-01-26</time>
+      <time datetime="2017-01-26T13:58:43.385Z" itemprop="datePublished">2017-01-26</time>
 </a>
 
 
@@ -345,7 +343,7 @@ Quick">
     <div class="copyright">
         <p><span>本文标题:</span><a href="/2017/01/26/hello-world/">Hello World</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">John Doe</a></p>
-        <p><span>发布时间:</span>2017-01-26, 21:37:53</p>
+        <p><span>发布时间:</span>2017-01-26, 21:58:43</p>
         <p><span>最后更新:</span>2017-01-25, 21:20:16</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/01/26/hello-world/" title="Hello World">http://yoursite.com/2017/01/26/hello-world/</a>
@@ -541,6 +539,23 @@ Quick">
         }
     
 </script>
+
+    <script>
+        var originTitle = document.title;
+        var titleTime;
+        document.addEventListener("visibilitychange", function() {
+            if (document.hidden) {
+                document.title = "(つェ⊂) 我藏好了哦~ " + originTitle;
+                clearTimeout(titleTime);
+            }
+            else {
+                document.title = "(*´∇｀*) 被你发现啦~ " + originTitle;
+                titleTime = setTimeout(function() {
+                    document.title = originTitle;
+                }, 2000);
+            }
+        })
+    </script>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
